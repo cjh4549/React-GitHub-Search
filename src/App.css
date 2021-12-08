@@ -23,6 +23,10 @@ html {
     margin-bottom: -2rem;
 }
 
+.header .wrapper {
+    width: 85%;
+}
+
 .wrapper {
     width: 80%;
     height: 100%;
@@ -46,6 +50,7 @@ html {
 
 .repo {
     margin-top: 3rem;
+    padding: 0;
 }
 
 .individualRepo {
@@ -61,4 +66,14 @@ html {
     margin-right: 1rem;
     font-size: 0.8rem;
     color: rgb(46, 46, 46);
+}
+
+@media (max-width: 350px) {
+    .repo__lists {
+        display: block;
+    }
+
+    .repo__lists li {
+        margin-bottom: 0.5rem;
+    }
 }
