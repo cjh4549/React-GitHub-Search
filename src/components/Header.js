@@ -1,8 +1,9 @@
 
-const Header = ({ setInputValue, loading }) => {
+const Header = ({ setInputValue }) => {
 
     return(
         <header className="header">
+            {/* Added wrapper container for styling consistency */}
             <div className="wrapper">
                 <form className='form' onSubmit={e => {
                     e.preventDefault();

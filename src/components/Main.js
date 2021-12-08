@@ -3,8 +3,11 @@ const Main = ({ repos, loading, error }) => {
     return(
         <main className='main'>
             <div className="wrapper">
+                {/* Passed loading and error states to trigger different renderings based on conditions of the states */}
                 {loading && <div><h2 className="loading">Searching...</h2></div>}
                 {error && <div><h2 className="loading">Unexpected error occurred. Please try again.</h2></div>}
+
+                {/* Mapped through the repo array to display the search results */}
                 <ul className='repo'>
                     {repos.map( repo => {
                         return(
