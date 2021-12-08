@@ -5,6 +5,7 @@ import Main from './components/Main';
 
 function App() {
   const [inputValue, setInputValue] = useState("");
+  const [repos, setRepos] = useState([]);
 
   useEffect(() => {
     if (!inputValue) {
@@ -15,15 +16,15 @@ function App() {
       .then(response => {
         return response.json();
       })
-      .then(json => {
-        console.log(json)
+      .then(jsonData => {
+        setRepos(jsonData.items);
       })  
   }, [inputValue])
 
   return (
     <div className="App">
       <Header inputValue={inputValue} setInputValue={setInputValue} />
-      <Main />
+      <Main repos={repos} />
     </div>
   );
 }

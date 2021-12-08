@@ -1,5 +1,5 @@
 
-const Header = ({ inputValue, setInputValue }) => {
+const Header = ({ setInputValue }) => {
 
     return(
         <form onSubmit={e => {
