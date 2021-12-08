@@ -2,13 +2,14 @@
 const Header = ({ setInputValue, loading }) => {
 
     return(
-        <form onSubmit={e => {
-            e.preventDefault();
-            setInputValue(e.target.elements.query.value.toLowerCase());
-        }}>
-            <input type="text" name='query' placeholder='Search for GitHub Repositories'/>
-            {/* {loading && <div></div>} */}
-        </form>
+        <header className="header">
+            <form className='form' onSubmit={e => {
+                e.preventDefault();
+                setInputValue(e.target.elements.query.value.toLowerCase());
+            }}>
+                <input className='form__input' type="text" name='query' placeholder='Search for GitHub Repositories'/>
+            </form>
+        </header>
     )
 
     

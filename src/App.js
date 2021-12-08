@@ -7,6 +7,7 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (!inputValue) {
@@ -16,19 +17,24 @@ function App() {
     setLoading(true);
 
     fetch("https://api.github.com/search/repositories?q=" + inputValue)
-      .then(response => {
+      .then( response => {
         return response.json();
       })
-      .then(jsonData => {
+      .then( jsonData => {
         setLoading(false);
         setRepos(jsonData.items);
+      })
+      .catch( err => {
+        setLoading(false);
+        setError(true);
+        console.error(err);
       })  
   }, [inputValue])
 
   return (
     <div className="App">
       <Header inputValue={inputValue} setInputValue={setInputValue} loading={loading} />
-      <Main repos={repos} loading={loading} />
+      <Main repos={repos} loading={loading} error={error} />
     </div>
   );
 }
