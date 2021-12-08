@@ -10,7 +10,7 @@ const Main = ({ repos }) => {
                             <ul>
                                 <li>Primary Language: {repo.language}</li>
                                 <li>Stars: {repo.stargazers_count}</li>
-                                <li>Watchers: {repo.watchers}</li>
+                                <li>Forks: {repo.forks_count}</li>
                                 <li>Visibility: {repo.visibility}</li>
                             </ul>
                         </li>
